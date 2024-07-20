@@ -11,13 +11,23 @@ Microservices is an architectural style where an application is built as a colle
 **The e-commerce platform is decomposed into the following 11 microservices:**
 
 AdService: Manages advertisements.
+
 CartService: Handles shopping cart operations.
+
 CheckoutService: Manages the checkout process.
+
 CurrencyService: Provides currency conversion.
+
 EmailService: Sends confirmation and notification emails.
+
 Frontend: The web front end of the application.
+
 LoadGenerator: Simulates user traffic for testing.
+
 PaymentService: Processes payments.
+
 ProductCatalogueService: Manages product catalog.
+
 RecommendationService: Provides product recommendations.
+
 ShippingService: Manages shipping logistics.
