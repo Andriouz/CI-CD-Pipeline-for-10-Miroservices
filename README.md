@@ -39,3 +39,33 @@ The e-commerce platform is decomposed into the following 11 microservices:
 10. **RecommendationService:** Provides product recommendations. Suggests products to users based on their browsing and purchase history.
 
 11 **ShippingService:** Manages shipping logistics.
+
+**Architecture and Technology Stack**
+
+The deployment architecture leverages Kubernetes for container orchestration and Jenkins for CI/CD. Key components include:
+
+**Kubernetes Cluster:** Ensures scalable and reliable service deployment.
+
+**Jenkins:** Automates the build, test, and deployment process.
+
+**Docker:** Containerizes each microservice.
+
+**Helm:** Manages Kubernetes applications.
+
+**Prometheus and Grafana:** Monitoring and visualization tools.
+
+**CI/CD Workflow**
+
+**Code Commit:** Developers push changes to the Git repository.
+
+**Branch Detection:** Jenkins Multibranch Pipeline detects new branches or commits.
+
+**Build:** Jenkins builds the Docker image for the microservice.
+
+**Test:** Jenkins runs unit and integration tests.
+
+**Push Image:** Jenkins pushes the Docker image to a container registry.
+
+**Deploy:** Jenkins deploys the microservice to the Kubernetes cluster using Helm.
+
+**Monitor:** The deployed microservice is monitored using Prometheus and Grafana.
