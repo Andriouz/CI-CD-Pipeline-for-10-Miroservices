@@ -6,28 +6,36 @@
 
 Microservices is an architectural style where an application is built as a collection of small, independent services. Each service focuses on a specific business function and operates on its own. These services communicate with each other through well-defined APIs, making the system more modular and easier to manage.
 
+**Project Overview**
+
+**Project Name:** 11 Microservice CI/CD Pipeline
+
+**Deployment Platform:** AWS EKS (Elastic Kubernetes Service)
+
+**Application Type:** E-Commerce Website
+
 **Microservices Overview**
 
-**The e-commerce platform is decomposed into the following 11 microservices:**
+The e-commerce platform is decomposed into the following 11 microservices:
 
-AdService: Manages advertisements.
+1. **AdService:** Manages advertisements and promotions on the website.
 
-CartService: Handles shopping cart operations.
+2. **CartService:** Handles user shopping carts, including adding, removing, and updating items.
 
-CheckoutService: Manages the checkout process.
+3. **CheckoutService:** Manages the checkout process, including order summary and confirmation.
 
-CurrencyService: Provides currency conversion.
+4. **CurrencyService:** Provides currency conversion and pricing in different currencies.
 
-EmailService: Sends confirmation and notification emails.
+5. **EmailService:** Sends confirmation and notification emails about purchases, promotions, and new products.
 
-Frontend: The web front end of the application.
+6. **Frontend:** Manages the website's user interface and user experience.
 
-LoadGenerator: Simulates user traffic for testing.
+7. **External Frontend (for load balancing):** Distributes incoming traffic across multiple frontend instances to ensure high availability and performance.
 
-PaymentService: Processes payments.
+8. **PaymentService:** Processes payments and handles transactions securely.
 
-ProductCatalogueService: Manages product catalog.
+9. **ProductCatalogueService:** Manages product listings, details, and inventory.
 
-RecommendationService: Provides product recommendations.
+10. **RecommendationService:** Provides product recommendations. Suggests products to users based on their browsing and purchase history.
 
-ShippingService: Manages shipping logistics.
+11 **ShippingService:** Manages shipping logistics.
