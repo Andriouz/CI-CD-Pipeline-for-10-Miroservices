@@ -47,7 +47,7 @@ The deployment architecture leverages Kubernetes for container orchestration and
 
 - **Kubernetes Cluster:** Ensures scalable and reliable service deployment.
 
-- **Jenkins:** Automates the build, test, and deployment process.
+- **Jenkins:** Automates the build, test, and deployment process. Each microservice has its own Jenkinsfile defining the steps for building, testing, and deploying the service.
 
 - **Docker:** Containerizes each microservice.
 
@@ -62,7 +62,7 @@ The deployment architecture leverages Kubernetes for container orchestration and
 
 2. **Branch Detection:** Jenkins Multibranch Pipeline detects new branches or commits.
 
-3. **Build:** Jenkins builds the Docker image for the microservice.
+3. **Build:** Jenkins builds the Docker image for the microservice. 
 
 4. **Test:** Jenkins runs unit and integration tests.
 
