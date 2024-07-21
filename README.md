@@ -71,3 +71,56 @@ The deployment architecture leverages Kubernetes for container orchestration and
 6. **Deploy:** Jenkins deploys the microservice to the Kubernetes cluster using Helm.
 
 7. **Monitor:** The deployed microservice is monitored using Prometheus and Grafana.
+
+**Hands-On Implementation Steps**
+
+Phase 1: Infrastructure Setup
+
+Create a User in AWS IAM: Create a new user with any name.
+Attach Policies: Attach the following policies to the newly created user:
+AmazonEC2FullAccess
+AmazonEKS_CNI_Policy
+AmazonEKSClusterPolicy
+AmazonEKSWorkerNodePolicy
+AWSCloudFormationFullAccess
+IAMFullAccess
+Create an Inline Policy: Create an inline policy with the following content and attach it to your user:
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": "eks:*",
+      "Resource": "*"
+    }
+  ]
+}
+Generate Secret Access Key: Once the IAM user is created, generate its Secret Access Key and download the credentials.csv file.
+Launch Virtual Machine Using AWS EC2
+
+EC2 Instance Requirements and Setup:
+Instance Type: t2.large
+vCPUs: 2
+Memory: 8 GB
+Network Performance: Moderate
+Amazon Machine Image (AMI): Ubuntu Server 20.04 LTS (Focal Fossa)
+Security Groups: Security groups act as a virtual firewall for your instance to control inbound and outbound traffic.
+- Port 22 (SSH): Allows SSH access to the instance.
+- Port 80 (HTTP): Allows web traffic to the instance.
+- Port 465 (SMTP): Used for secure email transmission.
+- Port 3000: Commonly used for development servers (e.g., Node.js).
+- Port 8080: Often used for web servers and development.
+- Port 8081: Another common port for web servers.
+- Port 9090: Typically used for web-based management interfaces.
+- Port 9000: Often used for custom applications.
+- Port 32630: Specific to your application needs.
+- Port 6443: Kubernetes API server.
+- Port 9115: Prometheus metrics.
+
+- Outbound Rules: Allow all traffic to ensure the instance can communicate externally.
+SSH into the Server: After launching your virtual machine, Open your terminal and use the following command to SSH into your instance:
+ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dns
+Replace /path/to/your-key-pair.pem with the path to your key pair file and your-ec2-public-dns with the public DNS of your EC2 instance.
+
+
