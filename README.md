@@ -120,7 +120,7 @@ IAMFullAccess
 **Network Performance:** Moderate
 **Amazon Machine Image (AMI):** Ubuntu Server 20.04 LTS (Focal Fossa)
 **Security Groups:** Security groups act as a virtual firewall for your instance to control inbound and outbound traffic.
-
+```
 - Port 22 (SSH): Allows SSH access to the instance.
   
 - Port 80 (HTTP): Allows web traffic to the instance.
@@ -144,11 +144,12 @@ IAMFullAccess
 - Port 9115: Prometheus metrics.
 
 - Outbound Rules: Allow all traffic to ensure the instance can communicate externally.
-  
-**2. SSH into the Server: After launching your virtual machine, Open your terminal and use the following command to SSH into your instance:**
-  
-ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dns
+```
 
+**2. SSH into the Server: After launching your virtual machine, Open your terminal and use the following command to SSH into your instance:**
+```
+ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dns
+```
 Replace /path/to/your-key-pair.pem with the path to your key pair file and your-ec2-public-dns with the public DNS of your EC2 instance.
 
 
