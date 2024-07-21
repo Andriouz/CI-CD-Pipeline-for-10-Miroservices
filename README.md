@@ -94,6 +94,7 @@ IAMFullAccess
 
 **3. Create an Inline Policy: Create an inline policy with the following content and attach it to your user:**
 
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -105,6 +106,7 @@ IAMFullAccess
     }
   ]
 }
+```
 
 **4. Generate Secret Access Key: Once the IAM user is created, generate its Secret Access Key and download the credentials.csv file.**
 
