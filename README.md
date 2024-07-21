@@ -76,15 +76,18 @@ The deployment architecture leverages Kubernetes for container orchestration and
 
 Phase 1: Infrastructure Setup
 
-Create a User in AWS IAM: Create a new user with any name.
-Attach Policies: Attach the following policies to the newly created user:
+**1. Create a User in AWS IAM: Create a new user with any name.**
+
+**2.Attach Policies: Attach the following policies to the newly created user:**
+
 AmazonEC2FullAccess
 AmazonEKS_CNI_Policy
 AmazonEKSClusterPolicy
 AmazonEKSWorkerNodePolicy
 AWSCloudFormationFullAccess
 IAMFullAccess
-Create an Inline Policy: Create an inline policy with the following content and attach it to your user:
+
+**3. Create an Inline Policy: Create an inline policy with the following content and attach it to your user:**
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -96,16 +99,19 @@ Create an Inline Policy: Create an inline policy with the following content and 
     }
   ]
 }
-Generate Secret Access Key: Once the IAM user is created, generate its Secret Access Key and download the credentials.csv file.
-Launch Virtual Machine Using AWS EC2
+**4. Generate Secret Access Key: Once the IAM user is created, generate its Secret Access Key and download the credentials.csv file.**
 
-EC2 Instance Requirements and Setup:
-Instance Type: t2.large
-vCPUs: 2
-Memory: 8 GB
-Network Performance: Moderate
-Amazon Machine Image (AMI): Ubuntu Server 20.04 LTS (Focal Fossa)
-Security Groups: Security groups act as a virtual firewall for your instance to control inbound and outbound traffic.
+**Launch Virtual Machine Using AWS EC2**
+
+**1. EC2 Instance Requirements and Setup:**
+
+**Instance Type:** t2.large
+**vCPUs:** 2
+**Memory:** 8 GB
+**Network Performance:** Moderate
+**Amazon Machine Image (AMI):** Ubuntu Server 20.04 LTS (Focal Fossa)
+**Security Groups:** Security groups act as a virtual firewall for your instance to control inbound and outbound traffic.
+
 - Port 22 (SSH): Allows SSH access to the instance.
 - Port 80 (HTTP): Allows web traffic to the instance.
 - Port 465 (SMTP): Used for secure email transmission.
